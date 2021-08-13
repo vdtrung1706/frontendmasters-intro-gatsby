@@ -1,0 +1,28 @@
+---
+data: 2021-08-13
+slug: another-blog
+title: Another Blog
+description: Im the lion king
+---
+
+import { graphql } from 'gatsby';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+
+export const query = graphql`
+  query SmashburgerQuery {
+    file(name: { eq: "smashburger" }) {
+      childImageSharp {
+        gatsbyImageData(placeholder: DOMINANT_COLOR)
+      }
+    }
+  }
+`;
+
+# Ohhh Man
+
+<GatsbyImage
+  image={getImage(props.data.file)}
+  alt="a smashburger on a plate with french fries in the foreground"
+/>
+
+This is second blog
